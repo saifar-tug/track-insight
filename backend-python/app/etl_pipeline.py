@@ -21,7 +21,6 @@ def prepare_data():
     # materials
     merged = merged.merge(materials, on='id', how='left', suffixes=('', '_mat'))
 
-    #columns
     merged['progress_percent'] = (merged['work_done'] / merged['planned_work_done']) * 100
     merged['material_efficiency'] = merged['quantity'] / merged['work_done']
 
